@@ -34,7 +34,7 @@ class EmailVerificationController extends Controller
         if ($user->hasVerifiedEmail()) {
             Log::info('Email already verified', ['user_id' => $user->id]);
             // Redirect to login even if already verified
-            return redirect('https://medassisthms.netlify.app/login');
+            return redirect('https://medassisthms.netlify.app');
         }
 
         try {
@@ -45,7 +45,7 @@ class EmailVerificationController extends Controller
             Log::info('Email verified successfully', ['user_id' => $user->id]);
 
             // Redirect to frontend login page
-            return redirect('https://medassisthms.netlify.app/login');
+            return redirect('https://medassisthms.netlify.app');
         } catch (\Exception $e) {
             Log::error('Verification exception', [
                 'user_id' => $user->id,
