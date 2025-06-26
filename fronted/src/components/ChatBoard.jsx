@@ -33,7 +33,7 @@ const ChatBoard = () => {
 
     setIsLoading(true);
     try {
-      const res = await fetch('http://localhost:8001/chat', {
+      const res = await fetch('https://medassist1-1.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
