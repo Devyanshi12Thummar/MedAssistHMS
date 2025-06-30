@@ -8,7 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 class ResetPasswordNotification extends Notification
 {
     protected $token;
-    protected $url=`https://medassisthms.netlify.app/forgotpassword`;
+    protected $url;
 
     public function __construct($token, $url)
     {

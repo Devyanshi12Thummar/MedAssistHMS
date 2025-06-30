@@ -38,9 +38,11 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->notify(new CustomVerifyEmail);
     }
 
-    public function sendPasswordResetNotification($token)
+    public function sendPasswordResetNotification($token, $url = null)
     {
-        $url = 'http://localhost:5173/reset-password/' . $token . '?email=' . urlencode($this->email);
+        if (!$url) {
+            $url = 'https://medassisthms.netlify.app/reset-password/' . $token . '?email=' . urlencode($this->email);
+        }
         $this->notify(new ResetPasswordNotification($token, $url));
     }
 
