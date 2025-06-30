@@ -24,7 +24,7 @@ class AuthController extends Controller
         $status = Password::sendResetLink(
             $request->only('email'),
             function ($user, $token) {
-                $url = 'http://localhost:3000/reset-password/' . $token . '?email=' . urlencode($user->getEmailForPasswordReset());
+                $url = 'https://medassisthms.netlify.app/reset-password/' . $token . '?email=' . urlencode($user->getEmailForPasswordReset());
 
         
                 // Customize the email notification with this link
