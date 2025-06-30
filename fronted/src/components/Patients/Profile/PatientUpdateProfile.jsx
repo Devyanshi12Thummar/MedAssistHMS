@@ -34,7 +34,7 @@ const PatientUpdateProfile = () => {
     profile_photo: null
   });
   // Update the image path constant to use the correct storage URL
-const imagePath = 'http://127.0.0.1:8000/storage/';
+const imagePath = `${API_BASE_URL}/storage/`;
   useEffect(() => {
     const fetchProfile = async () => {
       try {

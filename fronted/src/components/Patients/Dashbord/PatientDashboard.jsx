@@ -80,7 +80,7 @@ const PatientDashboard = () => {
                 >
                   <img
                     src={patientData?.profile_photo 
-                      ? `http://127.0.0.1:8000/storage/${patientData.profile_photo}`
+                      ? `${API_BASE_URL}/storage/${patientData.profile_photo}`
                       : "https://via.placeholder.com/40"}
                     alt="Profile"
                     className="w-10 h-10 rounded-full border-2 border-gray-200 object-cover"
